@@ -137,6 +137,6 @@ Contributions are welcome! To contribute:
 ## Contact
 
 For any questions or feedback, feel free to reach out:
-- **Email**: gautamaggarwaldev@gmail.com
+- **Email**: gautam.aggarwal.tech@gmail.com
 - **GitHub**: [gautamaggarwaldev](https://github.com/gautamaggarwaldev)
 
