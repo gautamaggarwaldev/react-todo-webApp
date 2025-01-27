@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      <h1 className="text-4xl font-bold text-blue-600 mb-6">Todo App</h1>
+      <h1 className="text-4xl font-bold text-blue-600 mb-6">Efficio App</h1>
       <CreateTodo
         setTodoName={setTodoName}
         todos={todos}

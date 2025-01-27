@@ -2,14 +2,14 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
 
-
+// function to create a new todo
 function CreateTodo({ todoName, setTodos, todos, setTodoName }) {
   const handleCreateTodo = (e) => {
     e.preventDefault();
     const newTodo = { id: uuid(), todoName: todoName };
 
     setTodos((preVal) => [newTodo, ...preVal]);
-    localStorage.setItem('Todos', JSON.stringify([newTodo, ...todos]));
+    localStorage.setItem('Todos', JSON.stringify([newTodo, ...todos])); //save todo in browser local storage
 
     setTodoName("");
   };

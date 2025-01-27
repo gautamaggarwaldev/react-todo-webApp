@@ -5,6 +5,7 @@ function TodoListComponent({ currentTodo, todos, setTodos }) {
   const [todoName, setTodoName] = useState(currentTodo.todoName);
   const [edit, setEdit] = useState(false); // initially edit functionality is off
 
+    // handle the save todo functionality
   const handleSaveTodo = () => {
     const updatedTodoArray = todos.map((todo) => {
       if (todo.id === currentTodo.id) {
@@ -19,7 +20,7 @@ function TodoListComponent({ currentTodo, todos, setTodos }) {
     });
 
     setTodos(updatedTodoArray);
-    localStorage.setItem('Todos', JSON.stringify(updatedTodoArray));
+    localStorage.setItem('Todos', JSON.stringify(updatedTodoArray)); //set updated todo in local storage
 
     setEdit(false);
   };
@@ -30,7 +31,7 @@ function TodoListComponent({ currentTodo, todos, setTodos }) {
         return {
           todoName: currentTodo.todoName,
           id: currentTodo.id,
-          isChecked: !currentTodo.isChecked,
+          isChecked: !currentTodo.isChecked, // toggle the isChecked value
         };
       } else {
         return todo;
@@ -41,6 +42,7 @@ function TodoListComponent({ currentTodo, todos, setTodos }) {
     localStorage.setItem('Todos', JSON.stringify(updatedTodoArray));
   };
 
+//   delete todo functionality
   const handleDeleteTodo = () => {
     const updatedTodoArray = todos.filter((todo) => todo.id !== currentTodo.id);
     setTodos(updatedTodoArray);
@@ -56,6 +58,8 @@ function TodoListComponent({ currentTodo, todos, setTodos }) {
         className="w-5 h-5"
       />
 
+      {/* if edit(true) then show input and change todo else show todoname */}
+
       {edit ? (
         <input
           type="text"
@@ -70,6 +74,8 @@ function TodoListComponent({ currentTodo, todos, setTodos }) {
         </p>
       )}
 
+      {/* if edit(true) show cancel and save button else show edit and delete button */}
+
       {edit ? (
         <>
           <button
@@ -78,7 +84,7 @@ function TodoListComponent({ currentTodo, todos, setTodos }) {
               setEdit(false);
               setTodoName(currentTodo.todoName);
             }}
-            className="text-sm text-gray-500 hover:text-gray-700"
+            className="ml-2 px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
           >
             Cancel
           </button>
@@ -87,7 +93,7 @@ function TodoListComponent({ currentTodo, todos, setTodos }) {
             onClick={() => {
               handleSaveTodo();
             }}
-            className="ml-2 px-2 py-1 bg-green-500 text-white rounded-lg hover:bg-green-600"
+            className="ml-2 px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600"
           >
             Save
           </button>
