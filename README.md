@@ -15,7 +15,7 @@ Efficio is a React-based todo application that helps users manage their tasks ef
 
 ## Images
 
-[todo](src/assets/image.png)
+![todo](src/assets/image.png)
 ![checkbox](src/assets/image-1.png)
 ![edit](src/assets/image-2.png)
 ![edit and save](src/assets/image-3.png)
